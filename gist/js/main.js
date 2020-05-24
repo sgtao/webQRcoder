@@ -48,6 +48,27 @@
 
   encode_btn.addEventListener('click', encodeQR);
 
+  // QR decoder
+
+  // File Reader
+  var obj1 = document.getElementById("selfile");
+
+
+  obj1.addEventListener("change", function (evt) {
+    var file = evt.target.files;
+    var reader = new FileReader();
+
+    //dataURL形式でファイルを読み込む
+    reader.readAsDataURL(file[0]);
+
+    //ファイルの読込が終了した時の処理
+    reader.onload = function () {
+      var dataUrl = reader.result;
+
+      //読み込んだ画像とdataURLを書き出す
+      document.getElementById("qr-canvas").innerHTML = "<img src='" + dataUrl + "'>";
+    }
+  }, false);
 
 
 }

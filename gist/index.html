@@ -26,10 +26,10 @@
           <img id="leftArrow" class="is-hidden" src="img/LeftArrow.png" >
       </div>
       <div class="f-item">
-        <div id="imghelp">select a file, and push "Decode" button.<input type="file" onchange="handleFiles(this.files)"></div>
-        <div class="button" >Decode</div>
+        <div id="imghelp">select a file, and push "Decode" button.<input type="file"  id="selfile"></div>
+        <div class="button is-hidden">Decode</div>
         <div id="qrfile" class="is-shown">
-          <canvas id="out-canvas" width="200" height="200"></canvas>
+          <div id="qr-canvas" width="200" height="200"></div>
         </div>
         <div id="resultQR" class="is-hidden">
           <img id="resultImg">
@@ -38,6 +38,15 @@
     </div>
     <div id="msg">message: </div>
     <hr>
+    <p>Simple QR decoder from file:</p>
+    <form enctype="multipart/form-data" action="http://api.qrserver.com/v1/read-qr-code/" method="POST">
+      <!-- MAX_FILE_SIZE (maximum file size in bytes) must precede the file input field used to upload the QR code image -->
+      <input type="hidden" name="MAX_FILE_SIZE" value="1048576" />
+      <!-- The "name" of the input field has to be "file" as it is the name of the POST parameter -->
+      Choose QR code image to read/scan: <input name="file" type="file" />
+      <input type="submit" value="Read QR code" />
+    </form>
+    
     <hr>
     <footer>
       <h3>Copyright &copy; <a href="https://sgtao.github.io/" target="_blank">sgtao.github.io</a> All Right Reserved.</h3>
