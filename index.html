@@ -13,22 +13,23 @@
     <hr>
     <div class="f-container" >
       <div class="f-item">
-        <div class="button">Encoder &RightArrow; </div>
+        <div id="encode_btn" class="button">Encode!</div>
         <div class="textcode">
           <form name="F1" action="#">
-            <textarea id="textdata" rows="10" cols="20" name="textdata"></textarea>
+            <textarea id="textarea" rows="10" cols="20" name="textdata"></textarea>
           </form>
         </div>
       </div>
-      <div class="f-item">
-        <div class="convert-arrow"></div>
+      <div class="f-item" class="convert-arrow">
+          <img class="right-arrow" class="hide"  src="img/RightArrow.png">
+          <img class="left-arrow" class="hide" src="img/LeftArrow.png" >
       </div>
       <div class="f-item">
-        <div class="button" >&LeftArrow; Decoder</div>
-        <div id="qrcode"><img class="qrimg"></div>
+        <div class="button" >Decode!</div>
+        <div id="qrcode"><img id="qrimg"></div>
       </div>
     </div>
-    <div id="msg">qrcode</div>
+    <div id="msg">Enter textarea and push "Encode!" button</div>
     <hr>
     <footer>
       <h3>Copyright &copy; <a href="https://sgtao.github.io/" target="_blank">sgtao.github.io</a> All Right Reserved.</h3>
