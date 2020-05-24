@@ -9,8 +9,8 @@
   const encode_btn = document.querySelector('#encode_btn');
   const msg = document.querySelector('#msg');
   const qrFile = document.querySelector('#qrfile');
-  const qrCode = document.querySelector('#qrcode');
-  const qr_img = document.querySelector('#qrimg');
+  const resultQR = document.querySelector('#resultQR');
+  const resultImg = document.querySelector('#resultImg');
   const rightArrow = document.querySelector('img#rightArrow');
   const leftArrow = document.querySelector('img#leftArrow');
   var first_load = false;
@@ -25,42 +25,29 @@
       msg.textContent = "Failed!(textarea is blank)";
       return;
     } else {
-      msg.textContent = `convert a text: "${textdata}" `;
+      msg.textContent = `encode text: "${textdata}" `;
+      encode_btn.innerHTML = 'Encoded!';
     }
 
     // indicate convert direction
     rightArrow.className = 'is-shown';
     leftArrow.className  = 'is-hidden';
     qrFile.className = 'is-hidden';
-    qrCode.className = 'is-shown';
+    resultQR.className = 'is-shown';
     encode_btn.classList.add('clicked');
 
     // insert QR image
-    qr_img.setAttribute("src", encode_qr_url + charset + size + '&data=' + conv_text);
-    qr_img.setAttribute("id", "qrimg");
+    resultImg.setAttribute("src", encode_qr_url + charset + size + '&data=' + conv_text);
+    resultImg.setAttribute("id", "qrimg");
     if (first_load === false) {
-      qrCode.appendChild(qr_img);
+      resultQR.appendChild(resultImg);
       first_load = true;
     }
 
   }
 
-  function hidehelp(target_obj) {
-    console.log(textarea);
-    if (textarea.value.lenght > 0) {
-      target_obj.className = "is-hidden";
-    }
-  }
-
-
   encode_btn.addEventListener('click', encodeQR);
-  const texthelp = document.querySelector('#texthelp');
-  console.log(textarea);
-  textarea.addEventListener('keyup', function() {
-    console.log('detect textarea : ' + this.value);
-    if (this.value.length > 0) {
-      hidehelp(texthelp);
-    }
-  });
+
+
 
 }

@@ -50,16 +50,16 @@ body {
   border-radius: 5px;  
 }
 
-.button:hover{
-  background-color: green;
-  color: black;
-  font-size: larger;
-}
-
-.button.clicked{
+.button.clicked {
   background-color: black;
   color: white;
   font-size: large;
+}
+
+.button:hover {
+  background-color: green;
+  color: black;
+  font-size: larger;
 }
 
 .f-item .convert-arrow {
