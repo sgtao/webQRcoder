@@ -8,6 +8,7 @@
   const textarea = document.querySelector('#textarea');
   const encode_btn = document.querySelector('#encode_btn');
   const msg = document.querySelector('#msg');
+  const qrFile = document.querySelector('#qrfile');
   const qrCode = document.querySelector('#qrcode');
   const qr_img = document.querySelector('#qrimg');
   const rightArrow = document.querySelector('img#rightArrow');
@@ -30,6 +31,8 @@
     // indicate convert direction
     rightArrow.className = 'is-shown';
     leftArrow.className  = 'is-hidden';
+    qrFile.className = 'is-hidden';
+    qrCode.className = 'is-shown';
     encode_btn.classList.add('clicked');
 
     // insert QR image
@@ -42,8 +45,22 @@
 
   }
 
-  encode_btn.addEventListener('click', encodeQR);
-  
+  function hidehelp(target_obj) {
+    console.log(textarea);
+    if (textarea.value.lenght > 0) {
+      target_obj.className = "is-hidden";
+    }
+  }
 
+
+  encode_btn.addEventListener('click', encodeQR);
+  const texthelp = document.querySelector('#texthelp');
+  console.log(textarea);
+  textarea.addEventListener('keyup', function() {
+    console.log('detect textarea : ' + this.value);
+    if (this.value.length > 0) {
+      hidehelp(texthelp);
+    }
+  });
 
 }

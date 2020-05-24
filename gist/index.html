@@ -13,10 +13,11 @@
     <hr>
     <div class="f-container" >
       <div class="f-item">
-        <div id="encode_btn" class="button">Encode!</div>
+          <div id="texthelp">Enter textarea and push "Encode" button.</div>
+        <div id="encode_btn" class="button">Encode</div>
         <div class="textcode">
           <form name="F1" action="#">
-            <textarea id="textarea" rows="10" cols="20" name="textdata"></textarea>
+            <textarea id="textarea" rows="15" cols="24" name="textdata"></textarea>
           </form>
         </div>
       </div>
@@ -25,11 +26,18 @@
           <img id="leftArrow" class="is-hidden" src="img/LeftArrow.png" >
       </div>
       <div class="f-item">
-        <div class="button" >Decode!</div>
-        <div id="qrcode"><img id="qrimg"></div>
+        <div id="imghelp">select a file, and push "Decode" button.<input type="file" onchange="handleFiles(this.files)"></div>
+        <div class="button" >Decode</div>
+        <div id="qrfile" class="is-shown">
+          <canvas id="out-canvas" width="200" height="200"></canvas>
+        </div>
+        <div id="qrcode" class="is-hidden">
+          <img id="qrimg">
+        </div>
       </div>
     </div>
-    <div id="msg">Enter textarea and push "Encode!" button</div>
+    <div id="msg">message: </div>
+    <hr>
     <hr>
     <footer>
       <h3>Copyright &copy; <a href="https://sgtao.github.io/" target="_blank">sgtao.github.io</a> All Right Reserved.</h3>
