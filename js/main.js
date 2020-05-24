@@ -10,6 +10,8 @@
   const msg = document.querySelector('#msg');
   const qrCode = document.querySelector('#qrcode');
   const qr_img = document.querySelector('#qrimg');
+  const rightArrow = document.querySelector('img#rightArrow');
+  const leftArrow = document.querySelector('img#leftArrow');
   var first_load = false;
 
   function encodeQR() {
@@ -25,6 +27,12 @@
       msg.textContent = `convert a text: "${textdata}" `;
     }
 
+    // indicate convert direction
+    rightArrow.className = 'is-shown';
+    leftArrow.className  = 'is-hidden';
+    encode_btn.classList.add('clicked');
+
+    // insert QR image
     qr_img.setAttribute("src", encode_qr_url + charset + size + '&data=' + conv_text);
     qr_img.setAttribute("id", "qrimg");
     if (first_load === false) {

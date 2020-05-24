@@ -32,6 +32,7 @@ body {
   display:flex;	
 	flex-direction : column;
   align-content: stretch;
+  text-align: center;
 }
 
 .f-item:first-child, .f-item:last-child {
@@ -46,12 +47,19 @@ body {
   background-color: lightgreen;
   color: black;
   border: 2px black solid;
-  border-radius: 3px;  
+  border-radius: 5px;  
 }
 
 .button:hover{
+  background-color: green;
+  color: black;
+  font-size: larger;
+}
+
+.button.clicked{
   background-color: black;
-  color: lightgreen;
+  color: white;
+  font-size: large;
 }
 
 .f-item .convert-arrow {
@@ -60,11 +68,9 @@ body {
   align-content: stretch;
 }
 
-.convert-arrow img {
-  width: 24px;
-  height: 24px;
-}
-
-.convert-arrow img .hide{
+img#leftArrow.is-hidden, img#rightArrow.is-hidden  {
   display: none;
+}
+img#leftArrow.is-shown, img#rightArrow.is-shown  {
+  display: block;
 }
