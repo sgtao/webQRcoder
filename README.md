@@ -5,3 +5,6 @@ QRencoder and QRdecoder on website
 - style reference : [webdesign-trens](https://webdesign-trends.net/entry/8148)
 - when edit image, use a site [PECO STEP](https://www.peko-step.com/tool/alphachannel.html)
 
+## sample site
+- [sgtao.github.io](https://sgtao.github.io/webQRcoder/)
+
