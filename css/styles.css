@@ -6,28 +6,51 @@ body {
     margin: 0;
 }
 
-
 #container {
     font-family: 'Courier New', sans-serif;
     width: 80%;
     margin: 30px auto 0;
+    display: block;
     text-align: center;
     font-weight: bold;
+    position: relative;
 }
 
-.menu .button {
+.f-container{
+	display:flex;	
+	flex-direction : row;
+	flex-wrap:nowrap;
+  width: 80%;
+  height: 240px;
+  margin: 10px 10%;
+  justify-content:  space-around;
+  align-items: stretch;
+  align-items: flex-start;
+}
+
+.f-item {
+  display:flex;	
+	flex-direction : column;
+  align-content: stretch;
+}
+
+.f-item:first-child, .f-item:last-child {
+  width: 40%;
+}
+
+
+.button {
   cursor: pointer;
   font-size: large;
   line-height: 20px;
-  background-color: white;
+  background-color: lightgreen;
   color: black;
   border: 2px black solid;
   border-radius: 3px;  
 }
 
-.menu .button:hover{
+.button:hover{
   background-color: black;
-  color: white;
+  color: lightgreen;
 }
-
 

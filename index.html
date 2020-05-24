@@ -11,23 +11,24 @@
     <h1>webQRcoder</h1>
     <p>QR Encoder and Decoder on website.</p>
     <hr>
-    <div class="menu">
-      <span class="button">Encoder &RightArrow; </span>
-      <span>　　　　</span>
-      <span class="button" >&LeftArrow; Decoder</span>
+    <div class="f-container" >
+      <div class="f-item">
+        <div class="button">Encoder &RightArrow; </div>
+        <div class="textcode">
+          <form name="F1" action="#">
+            <textarea id="textdata" rows="10" cols="20" name="textdata"></textarea>
+          </form>
+        </div>
+      </div>
+      <div class="f-item">
+        <div class="convert-arrow"></div>
+      </div>
+      <div class="f-item">
+        <div class="button" >&LeftArrow; Decoder</div>
+        <div id="qrcode"><img class="qrimg"></div>
+      </div>
     </div>
-    <div class="panel">
-      <span class="textcode">
-        <form name="F1" action="#">
-          <textarea id="textdata" rows="10" cols="40" name="textdata"></textarea>
-        </form>
-      </span>
-      <span class="button"></span>
-      <span class="qrcode">
-        <div id="msg">qrcode</div>
-        <div id="qrcode"></div>
-      </span>
-    </div>
+    <div id="msg">qrcode</div>
     <hr>
     <footer>
       <h3>Copyright &copy; <a href="https://sgtao.github.io/" target="_blank">sgtao.github.io</a> All Right Reserved.</h3>
