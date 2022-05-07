@@ -1,0 +1,107 @@
+@import 'modules/tab_contents';
+
+html, body {
+    font-size: 14px;
+    font-family: Verdana, sans-serif;
+    background: #eee;
+    color: #333;
+    margin: 0;
+}
+
+#container {
+    // font-family: 'Courier New', sans-serif;
+    width: 90%;
+    margin: 10px auto 0;
+    display: block;
+    text-align: center;
+    font-weight: bold;
+    position: relative;
+}
+
+.f-container{
+  width: 90%;
+  height: 360px;
+  margin: 10px 10%;
+  display: block;
+	// display:flex;	
+	// flex-direction : row;
+	// flex-wrap:nowrap;
+  // justify-content:  space-around;
+  // align-items: stretch;
+  // align-items: flex-start;
+}
+
+.f-item {
+  display:flex;	
+	flex-direction : column;
+  align-content: stretch;
+  text-align: center;
+  margin: 0 auto;
+  & > div {
+    width: 80%;
+  }
+}
+
+.f-item:first-child, .f-item:last-child {
+  // width: 40%;
+  width: 80%;
+}
+
+
+.button {
+  cursor: pointer;
+  font-size: large;
+  line-height: 20px;
+  background-color: lightgreen;
+  color: black;
+  border: 2px black solid;
+  border-radius: 5px;  
+}
+
+.button.clicked {
+  background-color: black;
+  color: white;
+  font-size: large;
+}
+
+.button:hover {
+  background-color: green;
+  color: black;
+  font-size: larger;
+}
+
+.f-item .convert-arrow {
+  display: flex;
+  width: 10%;
+  align-content: stretch;
+  text-align: center;
+}
+
+#qrfile {
+    width: 200px;
+    height: 200px;
+    border: 2px black solid;
+    background-color: white;
+}
+
+#texthelp, #imghelp {
+    position: relative;
+    left: 0px;
+    height: 64px;
+    width: 100%;
+    font: 18px arial,sans-serif;
+    background-color: white;
+    color: black;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    /* border: 1px black solid; */
+    /* border-radius: 10px; */
+}
+
+.is-hidden  {
+  display: none;
+}
+.is-shown  {
+  display: block;
+}
+

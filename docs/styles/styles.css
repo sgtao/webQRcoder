@@ -1,0 +1,128 @@
+@charset "UTF-8";
+/*タブ切り替え全体のスタイル*/
+.tabs_contents {
+  margin-top: 50px;
+  padding-bottom: 40px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  margin: 0 auto;
+  /*タブのスタイル*/
+  /*ラジオボタンを全て消す*/
+  /*タブ切り替えの中身のスタイル*/
+  /*選択されているタブのコンテンツのみを表示*/
+  /*選択されているタブのスタイルを変える*/ }
+  .tabs_contents .tab_item {
+    width: calc(100%/2);
+    height: 50px;
+    border-bottom: 3px solid #5ab4bd;
+    background-color: #d9d9d9;
+    line-height: 50px;
+    font-size: 16px;
+    text-align: center;
+    color: #565656;
+    display: block;
+    float: left;
+    text-align: center;
+    font-weight: bold;
+    transition: all 0.2s ease; }
+  .tabs_contents .tab_item:hover {
+    opacity: 0.75; }
+  .tabs_contents input[name="tab_item"] {
+    display: none; }
+  .tabs_contents .tab_content {
+    display: none;
+    padding: 40px 40px 0;
+    clear: both;
+    overflow: hidden; }
+  .tabs_contents #all:checked ~ #all_content,
+  .tabs_contents #programming:checked ~ #programming_content {
+    display: block; }
+  .tabs_contents input:checked + .tab_item {
+    background-color: #5ab4bd;
+    color: #fff; }
+
+html, body {
+  font-size: 14px;
+  font-family: Verdana, sans-serif;
+  background: #eee;
+  color: #333;
+  margin: 0; }
+
+#container {
+  width: 90%;
+  margin: 10px auto 0;
+  display: block;
+  text-align: center;
+  font-weight: bold;
+  position: relative; }
+
+.f-container {
+  width: 90%;
+  height: 360px;
+  margin: 10px 10%;
+  display: block; }
+
+.f-item {
+  display: flex;
+  flex-direction: column;
+  align-content: stretch;
+  text-align: center;
+  margin: 0 auto; }
+  .f-item > div {
+    width: 80%; }
+
+.f-item:first-child, .f-item:last-child {
+  width: 80%; }
+
+.button {
+  cursor: pointer;
+  font-size: large;
+  line-height: 20px;
+  background-color: lightgreen;
+  color: black;
+  border: 2px black solid;
+  border-radius: 5px; }
+
+.button.clicked {
+  background-color: black;
+  color: white;
+  font-size: large; }
+
+.button:hover {
+  background-color: green;
+  color: black;
+  font-size: larger; }
+
+.f-item .convert-arrow {
+  display: flex;
+  width: 10%;
+  align-content: stretch;
+  text-align: center; }
+
+#qrfile {
+  width: 200px;
+  height: 200px;
+  border: 2px black solid;
+  background-color: white; }
+
+#texthelp, #imghelp {
+  position: relative;
+  left: 0px;
+  height: 64px;
+  width: 100%;
+  font: 18px arial,sans-serif;
+  background-color: white;
+  color: black;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  /* border: 1px black solid; */
+  /* border-radius: 10px; */ }
+
+.is-hidden {
+  display: none; }
+
+.is-shown {
+  display: block; }
+
+/*# sourceMappingURL=styles.css.map */

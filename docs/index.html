@@ -4,37 +4,54 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>webQRcoder</title>
-  <link rel="stylesheet" type="text/css" href="./css/styles.css">
+  <link rel="stylesheet" href="styles/vendors/bootstrap-reboot.css">
+  <link rel="stylesheet" type="text/css" href="./styles/styles.css">
 </head>
 <body>
   <div id="container">
     <h1>webQRcoder</h1>
     <p>QR Encode and Decode on website.</p>
     <hr>
+    <!-- 参考）タブコンテンツの表示：https://bagelee.com/design/css/create_tabs_using_only_css/ -->
+    <div class="tabs_contents">
+        <input id="all" type="radio" name="tab_item" checked>
+        <label class="tab_item" for="all">
+          <div>
+            テキスト
+            <img id="rightArrow" class="is-hidden"  src="img/RightArrow.png">
+            <img id="leftArrow" class="is-hidden" src="img/LeftArrow.png" >
+          </div>
+          <!-- <div class="f-item" class="convert-arrow">
+          </div> -->
+        </label>
+        <input id="programming" type="radio" name="tab_item">
+        <label class="tab_item" for="programming">QRコード（画像）</label>
+        <div class="tab_content" id="all_content">
+            <div class="f-item">
+                <div id="texthelp">Enter textarea and push "Encode" button.</div>
+              <div id="encode_btn" class="button">Encode</div>
+              <div class="textcode">
+                <form name="F1" action="#">
+                  <textarea id="textarea" rows="15" cols="24" name="textdata"></textarea>
+                </form>
+              </div>
+            </div>
+        </div>
+        <div class="tab_content" id="programming_content">
+          <div class="f-item">
+            <div id="imghelp">select a file, and push "Decode" button.<input type="file"  id="selfile"></div>
+            <div class="button is-hidden">Decode</div>
+            <div id="qrfile" class="is-shown">
+              <div id="qr-canvas" width="200" height="200"></div>
+            </div>
+            <div id="resultQR" class="is-hidden">
+              <img id="resultImg">
+            </div>
+          </div>
+        </div>
+      </div>    
+    <hr>
     <div class="f-container" >
-      <div class="f-item">
-          <div id="texthelp">Enter textarea and push "Encode" button.</div>
-        <div id="encode_btn" class="button">Encode</div>
-        <div class="textcode">
-          <form name="F1" action="#">
-            <textarea id="textarea" rows="15" cols="24" name="textdata"></textarea>
-          </form>
-        </div>
-      </div>
-      <div class="f-item" class="convert-arrow">
-          <img id="rightArrow" class="is-hidden"  src="img/RightArrow.png">
-          <img id="leftArrow" class="is-hidden" src="img/LeftArrow.png" >
-      </div>
-      <div class="f-item">
-        <div id="imghelp">select a file, and push "Decode" button.<input type="file"  id="selfile"></div>
-        <div class="button is-hidden">Decode</div>
-        <div id="qrfile" class="is-shown">
-          <div id="qr-canvas" width="200" height="200"></div>
-        </div>
-        <div id="resultQR" class="is-hidden">
-          <img id="resultImg">
-        </div>
-      </div>
     </div>
     <div id="msg">message: </div>
     <hr>
